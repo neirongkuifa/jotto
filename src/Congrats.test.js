@@ -1,14 +1,11 @@
 import React from 'react'
 import jest from 'jest'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
+import { shallow } from 'enzyme'
 import Congrats from './Congrats'
 import { findByTestAttr, checkProps } from '../test/testUtils'
 import checkPropTypes from 'check-prop-types'
 
 const defaultProps = { success: false }
-
-Enzyme.configure({ adapter: new Adapter() })
 
 const setup = (props = {}) => {
   const setupProps = { ...defaultProps, ...props }
