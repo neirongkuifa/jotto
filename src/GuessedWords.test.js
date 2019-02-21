@@ -1,6 +1,6 @@
 import jest from 'jest'
 import React from 'react'
-import { shallow } from 'enzyme'
+import { shallow, render } from 'enzyme'
 import { findByTestAttr, checkProps } from '../test/testUtils'
 import GuessedWords from './GuessedWords'
 
@@ -41,7 +41,19 @@ describe('GuessedWords Component', () => {
     expect(wordsTable.length).toBe(1)
   })
 
-  it.skip('updates when props delivers gussedWords data', () => {
+  it('updates when props delivers gussedWords data', () => {
     const wrapper = setup()
+    let wordsTable = findByTestAttr(wrapper, 'wordsTable')
+    expect(wordsTable.text()).toContain('Hello')
+    expect(wordsTable.text()).not.toContain('Hero')
+    wrapper.setProps({
+      guessedWords: [
+        ...wrapper.instance().props.guessedWords,
+        { guessedWord: 'Hero', letterMatchCount: 3 }
+      ]
+    })
+    wordsTable = findByTestAttr(wrapper, 'wordsTable')
+    expect(wordsTable.text()).toContain('Hello')
+    expect(wordsTable.text()).toContain('Hero')
   })
 })

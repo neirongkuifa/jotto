@@ -4,8 +4,8 @@ import PropTypes from 'prop-types'
 function Congrats(props) {
   if (props.success) {
     return (
-      <div data-test='congrats-cpn'>
-        <span>Congradulations! You guess is correct!</span>
+      <div data-test='congrats-cpn' className='alert alert-success'>
+        <span>Congradulations! Your guess is correct!</span>
       </div>
     )
   } else {
