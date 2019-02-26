@@ -1,7 +1,8 @@
 import React from 'react'
+import { connect } from 'react-redux'
 import PropTypes from 'prop-types'
 
-function Congrats(props) {
+export function Congrats(props) {
   if (props.success) {
     return (
       <div data-test='congrats-cpn' className='alert alert-success'>
@@ -15,4 +16,9 @@ function Congrats(props) {
 Congrats.propTypes = {
   success: PropTypes.bool.isRequired
 }
-export default Congrats
+const mapState = state => ({ success: state.success })
+
+export default connect(
+  mapState,
+  null
+)(Congrats)

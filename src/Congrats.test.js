@@ -1,7 +1,7 @@
 import React from 'react'
 import jest from 'jest'
 import { shallow } from 'enzyme'
-import Congrats from './Congrats'
+import connectedCongrats, { Congrats } from './Congrats'
 import { findByTestAttr, checkProps } from '../test/testUtils'
 import checkPropTypes from 'check-prop-types'
 

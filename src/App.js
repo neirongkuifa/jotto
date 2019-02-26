@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './App.css'
+import Input from './Input'
 import Congrats from './Congrats'
 import GuessedWords from './GuessedWords'
 import { Provider } from 'react-redux'
@@ -10,8 +11,9 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className='container'>
-          <h1>Jotto</h1>
-          <Congrats success={true} />
+          <h1 className='text-center'>Jotto</h1>
+          <Input />
+          <Congrats success={false} />
           <GuessedWords
             guessedWords={[
               { guessedWord: 'Hello', letterMatchCount: 2 },

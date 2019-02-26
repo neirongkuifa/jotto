@@ -13,6 +13,9 @@ export const secretWordReducer = (state = '', action) => {
 }
 
 export const guessedWordsReducer = (state = [], action) => {
+  if (action.type === ACTIONS.GUESS_WORD) {
+    return [...state, action.payload]
+  }
   return state
 }
 
