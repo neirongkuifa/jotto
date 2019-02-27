@@ -9,6 +9,9 @@ export const successRducer = (state = false, action) => {
 }
 
 export const secretWordReducer = (state = '', action) => {
+  if (action.type === ACTIONS.SET_SECRET_WORD) {
+    return action.payload
+  }
   return state
 }
 

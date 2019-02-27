@@ -41,8 +41,8 @@ export default class GussedWords extends React.Component {
 GussedWords.propTypes = {
   guessedWords: PropTypes.arrayOf(
     PropTypes.shape({
-      guessedWord: PropTypes.string.isRequired,
-      letterMatchCount: PropTypes.number.isRequired
+      guessedWord: PropTypes.string,
+      letterMatchCount: PropTypes.number
     })
-  ).isRequired
+  )
 }
